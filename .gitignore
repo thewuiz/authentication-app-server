@@ -1,0 +1,7 @@
+# dependencies
+/node_modules
+dist/
+.vscode
+
+#/Eliminar esta linea si se sube a heroku, solo tenerla para githud
+.env
