@@ -27,4 +27,8 @@ router.post(
   controller.login
 );
 
+//Githud methods
+router.get("/github", controller.getAuthPageGithud);
+router.get("/github/:code", controller.loginGithud);
+
 export = router;
