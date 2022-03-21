@@ -5,12 +5,13 @@ import axios from "axios";
 import generate_jwt from "../helpers/jwt";
 import User from "../models/user";
 
+//REGULAR LOGIN
 const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
   try {
     const userDB = await User.findOne({ email });
     if (!userDB) {
-      return res.status(404).json({ errors: ["Wrong username or password"] });
+      return res.status(404).json({ errors: ["The email is not registered"] });
     }
 
     const validPassword = bcrypt.compareSync(password, userDB.password);
