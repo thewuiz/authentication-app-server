@@ -10,7 +10,6 @@ app.use(express.json());
 app.use(cors());
 
 dbConnection();
-
 app.use("/api/login", require("./routes/auth.route"));
 app.use("/api/users", require("./routes/users.route"));
 
