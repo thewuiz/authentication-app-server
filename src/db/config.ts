@@ -10,8 +10,8 @@ const dbConnection = async () => {
     }
     throw new Error("DB CONNECT ERROR!!");
   } catch (error) {
-    console.log(error);
-    throw new Error("DB CONNECT ERROR: " + error);
+    const err = new Error(`DB CONNECT ERROR: ${error} `);
+    return err;
   }
 };
 
